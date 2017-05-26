@@ -21,15 +21,15 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('stockdog/dashboard', {
+      .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
-      .when('stockdog/watchlist/:listId', {
+      .when('/watchlist/:listId', {
         templateUrl: 'views/watchlist.html',
         controller: 'WatchlistCtrl'
       })
       .otherwise({
-        redirectTo: 'stockdog/dashboard'
+        redirectTo: '/dashboard'
       });
   });
