@@ -1,0 +1,64 @@
+<div class="row">
+  <!-- Left Column -->
+  <div class="col-md-3">
+    <stk-watchlist-panel></stk-watchlist-panel>
+  </div>
+
+  <!-- Right Column -->
+  <div class="col-md-9">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-globe"></span>
+        Portfolio Overview
+      </div>
+      <div class="panel-body">
+        <!--  [1] Display some helpful text for users-->
+        <div ng-hide="watchlists.length && watchlists[0].stocks.length" class="jumbotron">
+          <h1>Unleash the hounds</h1>
+          <p>
+            StockDog, your sonperal investment watchthing is ready.
+          </p>
+          <p>
+            Create a watchlist and add some stocks to begin monitoring
+          </p>
+          </div>
+
+          <div ng-show="watchlists.length && watchlists[0].stocks.length">
+            <!-- Top Row-->
+            <div class="row">
+              <!-- Left Column -->
+              <div class="col-md-6">
+                <!-- [2] Use sign-fade directive on wrapper elemrnt-->
+                <div stk-sign-fade="{{marketValue}}" class="well">
+                  <h2>{{marketValue | currency}}</h2>
+                  <h5>Total Market Value</h5>
+                </div>
+              </div> <!-- end left column -->
+
+              <!-- Right Column -->
+              <div class="col-md-6">
+                <!-- [3] Use sign color directive on wrapper elemetn -->
+                <div class="well" stk-sign-color="{{dayChange}}">
+                  <h2>{{dayChange | currency}}</h2>
+                  <h5>Total Day Change</h5>
+                </div>
+              </div> <!--  End right colum-->
+            </div> <!--  end top row-->
+
+            <!-- [4] Use goog;e-chart directive and reference chart objects  -->
+            <div class="row">
+              <!-- Left Column -->
+                <div class="col-md-6">
+                  <div google-chart chart="donutChart" style="{{cssStyle}}"></div>
+                </div> <!-- end left columb -->
+
+              <!-- right column -->
+              <div class="col-md-6">
+                <div google-chart chart="columnChart" style="{{cssStyle}}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
