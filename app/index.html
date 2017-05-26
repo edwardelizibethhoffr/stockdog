@@ -35,7 +35,7 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- Add active class to necessary item -->
             <li ng-class="{active: activeView === 'dashboard'}">
-              <a href="/">Dashboard</a>
+              <a href="/stockdog/">Dashboard</a>
             </li>
             <li ng-class="{active: activeView === 'watchlist'}"
               class="dropdown">
@@ -48,7 +48,7 @@
                 </li>
                 <!-- Create a unique link for each watchlist -->
                 <li ng-repeat="list in watchlists track by $index">
-                  <a href="/#/watchlist/{{list.id}}">{{list.name}}</a>
+                  <a href="/stockdog/#/watchlist/{{list.id}}">{{list.name}}</a>
                 </li>
               </ul>
             </li>
