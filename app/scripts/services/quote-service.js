@@ -3,7 +3,7 @@
 angular.module('stockDogApp')
   .service('QuoteService', function QuoteService($http, $interval) {
    	var stocks = [];
-   	var BASE = 'http://query.yahooapis.com/v1/public/yql';
+   	var BASE = 'https://query.yahooapis.com/v1/public/yql';
 
    	//[1] handles updating stock model with appropiate data from quote
    	var update = function (quotes) {
